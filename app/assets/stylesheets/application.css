@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+	font-family: 'Halant', serif;
+	}
+
+h1, h2 {
+font-weight: bold;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+p{
+	font-size: 16px;
+}
