@@ -4,6 +4,7 @@
 <h2><%= restaurant.name %></h2>
 <%= link_to("edit #{restaurant.name}", edit_restaurant_path(restaurant)) %>
 <%= link_to("delete #{restaurant.name}", restaurant_path(restaurant), method: :delete) %>
+<%= link_to("show #{restaurant.name}", restaurant_path(restaurant)) %>
 
 <% end %>
 <% else %>

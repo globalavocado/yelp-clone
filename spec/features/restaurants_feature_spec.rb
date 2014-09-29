@@ -60,5 +60,18 @@ describe 'restaurants' do
 			expect(page).to have_content 'Restaurant deleted successfully'
 		end
 	end
+
+	context 'show individual restaurant details' do
+		before do
+			Restaurant.create(name:'The Ivy')
+		end
+
+		it 'has a separate page with the restaurant details' do
+			visit '/restaurants'
+			click_link 'show The Ivy'
+			expect(page).to have_content 'The Ivy'
+		end
+	end
+
 end
 

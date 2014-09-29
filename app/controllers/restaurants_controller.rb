@@ -30,4 +30,8 @@ def destroy
 	redirect_to restaurants_path
 end
 
+def show
+	@restaurant = Restaurant.find(params[:id])
+end
+
 end
