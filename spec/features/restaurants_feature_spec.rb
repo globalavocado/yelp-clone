@@ -33,6 +33,19 @@ describe 'restaurants' do
 
 	end
 
-	
+	context 'editing restaurants' do
+		before do
+			Restaurant.create(name:'The Ivy')
+		end
+
+		it 'can allow a user to edit a restaurant' do
+			visit '/restaurants'
+			click_link 'edit The Ivy'
+			fill_in 'Name', :with => 'the poshest restaurant in town'
+			click_button 'Update Restaurant'
+			expect(page).to have_content 'the poshest restaurant in town'
+			expect(current_path).to eq '/restaurants'
+		end
+	end
 end
 
