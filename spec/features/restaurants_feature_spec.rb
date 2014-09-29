@@ -47,5 +47,18 @@ describe 'restaurants' do
 			expect(current_path).to eq '/restaurants'
 		end
 	end
+
+	context 'deleting restaurants' do
+		before do
+			Restaurant.create(name:'The Ivy')
+		end
+
+		it 'removes a restaurant when a user clicks the delete link' do
+			visit '/restaurants'
+			click_link 'delete The Ivy'
+			expect(page).not_to have_content 'The Ivy'
+			expect(page).to have_content 'Restaurant deleted successfully'
+		end
+	end
 end
 
