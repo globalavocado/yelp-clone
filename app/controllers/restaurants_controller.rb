@@ -9,8 +9,12 @@ def new
 end	
 
 def create
-	@restaurant = Restaurant.create(params[:restaurant].permit(:name, :description))
-	redirect_to restaurants_path
+	@restaurant = Restaurant.new(params[:restaurant].permit(:name, :description))
+	if @restaurant.save
+		redirect_to restaurants_path
+	else
+		render 'new'
+	end	
 end
 
 def edit
