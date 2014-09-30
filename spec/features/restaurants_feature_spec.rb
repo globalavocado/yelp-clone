@@ -72,6 +72,5 @@ describe 'restaurants' do
 			expect(page).to have_content 'The Ivy'
 		end
 	end
-
 end
 
