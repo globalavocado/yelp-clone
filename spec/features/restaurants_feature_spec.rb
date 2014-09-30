@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe 'restaurants' do
 	context 'no restaurants have been added' do
 		it 'should display a prompt to add a restaurant' do
@@ -18,20 +20,23 @@ describe 'restaurants' do
 			expect(page).to_not have_content ('no restaurants yet')
 		end
 	end
+end
 
-	context 'adding new restaurants' do
-		it 'should have a page to add a new restaurant' do
-			visit '/restaurants'
-			click_on 'add a restaurant'
-			expect(current_path).to eq '/restaurants/new'
-		end
+describe 'creating restaurants' do
 
-		it 'should have a form to add a new restaurant' do
-			visit '/restaurants/new'
-			expect(page).to have_field('restaurant_name')
-		end
+	context 'a valid restaurant' do
 
-	end
+		 it 'prompts the user to fill out a form then displays the new restaurant' do
+		    visit '/restaurants'
+		    click_link 'add a restaurant'
+		    fill_in 'Name', with: 'The Ivy'
+		    click_button 'Create Restaurant'
+		    expect(page).to have_content('The Ivy')
+		    expect(current_path).to eq '/restaurants'
+  		end
+  	end
+end
+
 
 	context 'editing restaurants' do
 		before do
@@ -63,7 +68,7 @@ describe 'restaurants' do
 
 	context 'show individual restaurant details' do
 		before do
-			Restaurant.create(name:'The Ivy')
+			Restaurant.create(name:'The Ivy', description:'the poshest restaurant in town')
 		end
 
 		it 'has a separate page with the restaurant details' do
@@ -72,5 +77,5 @@ describe 'restaurants' do
 			expect(page).to have_content 'The Ivy'
 		end
 	end
-end
+
 

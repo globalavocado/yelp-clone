@@ -5,6 +5,15 @@
 <%= link_to("edit #{restaurant.name}", edit_restaurant_path(restaurant)) %>
 <%= link_to("delete #{restaurant.name}", restaurant_path(restaurant), method: :delete) %>
 <%= link_to("show #{restaurant.name}", restaurant_path(restaurant)) %>
+<%= link_to("review #{restaurant.name}", new_restaurant_review_path(restaurant)) %>
+
+	<ul>
+		<% restaurant.reviews.each do |review| %>
+			<li>
+				<%= "#{review.musings} #{review.rating}" %>
+			</li>
+		<% end %>
+	</ul>
 
 <% end %>
 <% else %>
