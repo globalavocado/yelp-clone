@@ -10,7 +10,7 @@
 	<ul>
 		<% restaurant.reviews.each do |review| %>
 			<li>
-				<%= "#{review.musings} #{review.rating}" %>
+				<%= "#{review.musings}" %> <strong><%= "#{review.rating}" %></strong>
 				<em><%= time_ago_in_words(review.created_at) %> ago</em>
 			</li>
 		<% end %>
