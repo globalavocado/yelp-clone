@@ -18,6 +18,10 @@ Rails.application.routes.draw do
         resources :reviews
       end
 
+    resources :reviews do
+          resources :endorsements
+    end
+
 
   # Example resource route with options:
   #   resources :products do
