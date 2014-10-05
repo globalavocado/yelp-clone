@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'devise'
+gem 'omniauth-facebook'
+
+gem "paperclip", "~> 4.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
@@ -27,15 +31,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 
 group :development, :test do
-	gem 'spring'
 	gem 'rspec-rails'
 	gem 'capybara'
 	gem 'rspec-collection_matchers'
 	gem 'poltergeist'
 	gem 'database_cleaner'
-	gem 'launchy'
-	gem 'devise'
-	gem 'omniauth-facebook'
 end
 
 
