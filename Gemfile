@@ -35,6 +35,7 @@ group :development, :test do
 	gem 'database_cleaner'
 	gem 'launchy'
 	gem 'devise'
+	gem 'omniauth-facebook'
 end
 
 
