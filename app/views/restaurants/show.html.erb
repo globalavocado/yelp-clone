@@ -1,4 +1,13 @@
 <h1><%= @restaurant.name %></h1>
-<%= image_tag @restaurant.image.url(:medium) %>
-</p>
-<%= @restaurant.description %>
+<img src="<%=@restaurant.image.url(:medium).split('?').first%>">
+
+<p><%=@restaurant.description%></p>
+
+<% if @restaurant.long && @restaurant.lat %>
+
+<div id="map"></div>
+
+<div class='lat'><%=@restaurant.lat%></div>
+<div class='long'><%=@restaurant.long%></div>
+
+<% end %>
