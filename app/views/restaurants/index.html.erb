@@ -1,28 +1,22 @@
 <%= notice %>
 <% if @restaurants.any? %>
 <%	@restaurants.each do |restaurant| %>
-<h2><%= restaurant.name %></h2>
-<%= image_tag restaurant.image.url(:thumb) %></p>
-<%= link_to("edit #{restaurant.name}", edit_restaurant_path(restaurant)) %>
-<%= link_to("delete #{restaurant.name}", restaurant_path(restaurant), method: :delete) %>
-<%= link_to("show #{restaurant.name}", restaurant_path(restaurant)) %>
-<%= link_to("review #{restaurant.name}", new_restaurant_review_path(restaurant)) %>
+<section class="row">
+	<div class="col-md-2 col-md-offset-3 avatar">
+	<%= image_tag restaurant.image.url(:medium) %></p>
+	<div class="restaurant-links">
+	<%= link_to("", edit_restaurant_path(restaurant), class: "glyphicon glyphicon-pencil") %>
+	<%= link_to("", restaurant_path(restaurant), method: :delete, class: "glyphicon glyphicon-remove") %>
+	</div>
+	</div>
+	<div class="col-md-4">
+	<h2><%= restaurant.name %></h2>
+	<span class="stars"><%= star_rating(restaurant.average_rating) %></span>
+		<p><%= truncate(restaurant.description, length: 30)%><%= link_to("read more", restaurant_path(restaurant)) %></p>
+	<%= link_to("review #{restaurant.name}", new_restaurant_review_path(restaurant), class: "btn btn-warning")%>
 
-	<ul>
-		<% restaurant.reviews.each do |review| %>
-			<li>
-				<%= "#{review.musings}" %> <strong><%= "#{review.rating}" %></strong>
-				<em><%= time_ago_in_words(review.created_at) %> ago</em>
-			
-			<%= link_to 'endorse this review', review_endorsements_path(review), class: 'endorsement-links' %>
-			
-			<span class="endorsements_count">
-				<%= pluralize(review.endorsements.count, 'endorsement') %>
-			</span></li>
-		<% end %>
-			<h3>average rating: <%= star_rating(restaurant.average_rating) %></h3>
-	</ul>
-
+	</div>
+</section>
 <% end %>
 <% else %>
 <p>no restaurants yet</p>

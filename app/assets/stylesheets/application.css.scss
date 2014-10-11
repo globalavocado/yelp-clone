@@ -14,6 +14,9 @@
  *= require_self
  */
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
  body {
 	font-family: 'Halant', serif;
 	}
@@ -33,3 +36,4 @@ h2 {
 p{
 	font-size: 16px;
 }
+

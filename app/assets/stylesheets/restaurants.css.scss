@@ -10,3 +10,38 @@
 .lat, .long{
 	display: none;
 }
+
+.row {
+	margin-bottom: 20px;
+}
+
+.avatar{
+	width: 180px;
+	height: 180px;
+	border: solid 4px teal;	
+}
+
+.avatar img{
+	max-height: 180px;
+}
+
+.stars {
+	font-size: 20px;
+	color: #DB9E36;
+}
+
+.restaurant-links a, .restaurant-links a:hover {
+	color: #BD4932;
+	text-decoration: none;
+	font-size: 20px;
+	padding: 5px;
+	text-align: center;
+}
+
+.restaurant-links a {
+	opacity: .5;
+}
+
+.restaurant-links a:hover {
+	opacity: .8;
+}

@@ -28,12 +28,16 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    autoprefixer-rails (3.1.1.20141001)
+      execjs
     aws-sdk (1.5.8)
       httparty (~> 0.7)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt (3.1.7)
+    bootstrap-sass (3.2.0.2)
+      sass (~> 3.2)
     builder (3.2.2)
     capybara (2.4.3)
       mime-types (>= 1.16)
@@ -195,7 +199,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   aws-sdk (~> 1.5.7)
+  bootstrap-sass (~> 3.2.0)
   capybara
   coffee-rails (~> 4.0.0)
   database_cleaner
