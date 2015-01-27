@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/globalavocado/yelp-clone/badges/gpa.svg)](https://codeclimate.com/github/globalavocado/yelp-clone)
+
 <h1>Yelp clone</h1>
 
 <h2>Makers Academy week 9 - Ruby on Rails</h2>
