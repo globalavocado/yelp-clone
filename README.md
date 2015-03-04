@@ -10,7 +10,6 @@ Facebook social login
 star ratings
 map locations
 
-
 <h3>Technologies used</h3>
 - ruby
 - Rails
@@ -26,4 +25,18 @@ map locations
 - Gmaps
 - Bootstrap framework (CSS3, HTML5, Javascript)
 
+<h3>instructions</h3>
+To run the Yelp clone, create a database 
 
+~~~
+  ... =# CREATE DATABASE "yelp_clone_test";
+  ... =# CREATE DATABASE "yelp_clone_development";
+  ... =# \q
+~~~
+
+and start the server:
+
+~~~
+	... $ bundle
+	... $ rails s
+~~~
