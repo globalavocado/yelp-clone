@@ -34,9 +34,23 @@ To run the Yelp clone, create a database
   ... =# \q
 ~~~
 
-and start the server:
+install the gems:
 
 ~~~
 	... $ bundle
+~~~
+
+then generate some database contents (creates 2 entries):
+
+~~~
+    ... $ bin/rake db:seed
+~~~
+
+install the gems and start the server:
+
+~~~
 	... $ rails s
 ~~~
+
+Go to your browser and you should see the site at http://localhost:3000 
+If not, check the port number in the command line.
